@@ -1,0 +1,58 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+$color1: #C8DAE6;
+$color2: #333;
+
+body {
+	color: #fff;
+	font-family: Trebuchet MS;
+	margin: 0;
+	background-color: lighten($color1, 10%);
+	h1 {
+		color: $color2;
+		text-align: center;
+	}
+	.lead {
+		color: $color2;
+		text-align: center;
+	}
+}
+
+article {
+	overflow: hidden;
+}
+
+.forecast {
+	cursor: pointer;
+	opacity: 0.8;
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+.day {
+	overflow: hidden;
+	position: relative;
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+	background-color: white;
+	.weekday {
+		font-size: 1.125rem;
+		padding: 5px 20px; 
+		color:$color2;
+	}
+	.weather {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.temp {
+		font-size: 1rem; 
+		color: $color2;
+		&.description{
+			font-size:1.125rem;
+		}
+	}
+}
