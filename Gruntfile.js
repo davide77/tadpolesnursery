@@ -55,7 +55,7 @@ module.exports = function (grunt) {
               '.tmp/{,*/}*.css'
             ]
           }
-      }
+      },
     
       sass: {
           options: {
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
             'css/style.css':'css/style.css'
           }
         }
-      }
+      },
 
       
       // The actual grunt server settings
