@@ -1,4 +1,5 @@
 'use strict';
+var serveStatic = require('serve-static');
 
 module.exports = function (grunt) {
 
@@ -52,11 +53,14 @@ module.exports = function (grunt) {
             files: [
               '**/*.{html,js,scss,json}',
               '*.html',
-              '.tmp/{,*/}*.css'
+              '.tmp/{,*/}*.css',
+              'images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+              'fonts/{,*/}*.{otf,woff,woff2,eot,ttf,svg}',
             ]
-          }
+          },
       },
-    
+  
+ 
       sass: {
           options: {
               sourceMap: true,
@@ -95,6 +99,7 @@ module.exports = function (grunt) {
         }
       },
 
+
       
       // The actual grunt server settings
       connect: {
@@ -108,15 +113,22 @@ module.exports = function (grunt) {
           options: {
             open: true,
             base: 'dist',
-            middleware: function (connect) {
+            middleware: function(connect, options, middlwares) {
+              // an explicit array of any middlewares that ignores the default set
               return [
-                connect().use(
-                  'scss',
-                  connect.static('scss')
-                )
+                serveStatic(options.base[0]),
+
+                function(req, res, next) {
+                  if (req.url !== '/hello/world') {
+                    next();
+                    return;
+                  }
+                  res.end('Hello from port ' + options.port);
+                }
               ];
-            }
-          }
+            },
+             
+          },
         },
         dist: {
           options: {
@@ -135,12 +147,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
+    grunt.loadNpmTasks('grunt-contrib-nodeunit'); 
 
 
-    grunt.registerTask('test', ['clean', 'svgstore', 'nodeunit']);
-    grunt.registerTask('default', ['connect:livereload', 'watch',  'sass:dev']);
+    grunt.registerTask('test', ['clean', 'nodeunit']);
+    grunt.registerTask('default', ['connect:livereload', 'watch', 'sass:dev']);
     grunt.registerTask('server', ['connect','watch']);
 
 };
