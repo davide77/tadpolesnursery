@@ -29,7 +29,7 @@ module.exports = function (grunt) {
       //sass is running a autoprefizer which will add all the prefixer for you.
 
       sass: {
-          files: ['scss/**/*.scss'],
+          //files: ['scss/**/*.scss'],
           tasks: ['sass:dev', 'autoprefixer'],
           dist: {
               options: {
