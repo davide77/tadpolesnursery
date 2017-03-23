@@ -15,7 +15,7 @@ Note: You need to have your backend server running.
 
 # To run the app:
 
-grunt watch
+grunt dev
 
 # It will:
 

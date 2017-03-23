@@ -7,21 +7,18 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
 
    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
-   <script src="js/script.js"></script>
-
+   <script src="/js/script.js"></script>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-   <link rel="stylesheet" href="styles/app.css">
+   <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
  
-<!-- accessibility code herejump to content -->
-    <div id="skiplink-container">
-      <a href="#content" class="skiplink">Skip to main content</a>
-    </div> 
+  <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> 
+
   <article ng-app="App">
 
-    <section ng-controller="MainController" class="container">
+    <section ng-controller="MainController" class="container" id="content">
       <h1 class="">{{fiveDay.city.name}}</h1>
       <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 
