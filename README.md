@@ -1,5 +1,5 @@
-# OpenWeatherMap
-this is a experiment that showcase the weather of the next 5 days 
+# TadpolesNursery website
+official website of Tadpoles Nursery, the best nursery school based in Chelsea
 
 # PRE REQUISITES:
 
