@@ -1,56 +1,28 @@
 <!doctype html>
-<html class="ds">
+<html class="js">
 <head>
   <meta charset="utf-8">
-  <title>Wheather app</title>
-  <meta name="viewport" content="width=device-width">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="description" content="School Nursery in the hart of Chelsea SW10 London">
+  <title>Tadpoles Nursery</title> 
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, user-scalable=1">
 
-   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
-   <script src="/js/script.js"></script>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
  
-  <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> 
 
-  <article ng-app="App">
+  <main class="clearfix">
 
-    <section ng-controller="MainController" class="container" id="content">
-      <h1 class="">{{fiveDay.city.name}}</h1>
-      <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-
-      <div class="d-md-inline-flex d-lg-flex flex-wrap">
-        <div ng-repeat="day in fiveDay.list" class="col forecast p-1">
-          <div class="day" ng-class="{{day.weather[0].main}}">
-            <div class="weekday">
-              <p class="py-2 mb-0 text-center">{{ day.dt*1000 | date}}</p>
-            </div>
-            <div class="d-flex justify-content-center">
-              <img ng-src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" class="img-fluid py-2" />
-            </div>
-            <div class="d-flex justify-content-center">
-              <div class="temp description py-2 text-center">{{day.weather[0].description}}</div>
-            </div>
-            <div class="d-flex justify-content-center">
-              <div class="temp p-2"><span>day</span> {{ day.temp.day }}°</div>
-            </div>
-            <div class="d-flex justify-content-center hidden-md-down">
-              <div class="temp pb-2"><span>max</span> {{ day.temp.max }}°</div>
-              <div class="temp pb-2"><span>min</span> {{ day.temp.min }}°</div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
+    <section class="container" id="content">
+        
     </section>
-  </article>
+
+  </main>
 
 
    
- 
-</body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+   <script src="/js/script.js"></script> 
+</body> 
 </html>
